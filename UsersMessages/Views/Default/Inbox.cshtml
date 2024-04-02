@@ -1,0 +1,244 @@
+﻿@using EntityLayer.Concrete
+@model List<UsersMessage>
+@{
+    ViewData["Title"] = "Inbox";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="">
+    <meta name="author" content="Themepixels">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/Mail/smartmail/assets/img/favicon.png">
+
+    <title>SmartMail</title>
+
+    <!-- Vendor CSS -->
+    <link href="~/Mail/smartmail/lib/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/Mail/smartmail/assets/css/style.min.css">
+</head>
+<body>
+    <div class="mailbox">
+        <div class="mailbox-header">
+            <a href="#" class="mailbox-menu"><i class="ri-menu-2-fill"></i></a>
+            <div class="mailbox-search">
+                <i class="ri-search-line"></i>
+                <input type="search" class="form-control" placeholder="Search mail">
+            </div><!-- mailbox-search -->
+            <a href="#" class="mail-avatar"><span>m</span></a>
+        </div><!-- mailbox-header -->
+
+        <div class="mailbox-option">
+            <div class="mailbox-select dropdown">
+                <a href="" class="dropdown-check">
+                    <i class="ri-checkbox-blank-line"></i>
+                    <i class="ri-checkbox-fill"></i>
+                    <i class="ri-checkbox-indeterminate-fill"></i>
+                </a>
+                <a href="" class="dropdown-link" data-bs-toggle="dropdown"><i class="ri-arrow-down-s-line"></i></a>
+                <div class="dropdown-menu">
+                    <a href="" class="dropdown-item all"><i class="ri-check-fill"></i> All</a>
+                    <a href="" class="dropdown-item none active"><i class="ri-check-line"></i> None</a>
+                    <a href="" class="dropdown-item read"><i class="ri-check-line"></i> Read</a>
+                    <a href="" class="dropdown-item unread"><i class="ri-check-line"></i> Unread</a>
+                    <a href="" class="dropdown-item starred"><i class="ri-check-line"></i> Starred</a>
+                    <a href="" class="dropdown-item custom"><i class="ri-check-line"></i> Custom</a>
+                </div><!-- dropdown-menu -->
+            </div><!-- mailbox-select -->
+
+            <div class="ms-auto d-flex align-items-center">
+                <span>1-10 of 1,060</span>
+                <a href="" class="pager prev"><i class="ri-arrow-left-s-line"></i></a>
+                <a href="" class="pager next"><i class="ri-arrow-right-s-line"></i></a>
+            </div>
+        </div><!-- mailbox-option -->
+        <ul id="mailGroup" class="mail-group">
+            @foreach(var item in Model)
+            {
+                
+            
+            <li class="mail-item">
+                <div class="mail-avatar"><img src="~/Mail/smartmail/assets/img/img1.jpg" alt=""></div>
+                <div class="mail-item-body">
+                    <div class="d-flex align-items-center">
+                        <span class="mail-sender">@item.SenderName</span>
+                        <span class="mail-time">12:23 PM</span>
+                        <span class="mail-star"><i class="ri-star-line"></i><i class="ri-star-fill"></i></span>
+                    </div>
+                    <h6 class="mail-subject">Reactivate and Reconnect <span>2</span></h6>
+                    <p class="mail-text">Excepteur sint occa cupidatat non proident, sunt in culpa qui officia...</p>
+                </div><!-- mail-item-body -->
+            </li>
+            }
+        </ul><!-- mail-group -->
+
+    </div><!-- mailbox -->
+
+    <div id="mailContent" class="mailcontent">
+        <div class="mailcontent-subject d-none">
+            <nav class="nav">
+                <a id="mailBack" href="#" class="nav-link"><i class="ri-arrow-left-line"></i></a>
+                <a href="#" class="nav-link" data-bs-toggle="tooltip" title="Archive" data-bs-placement="left"><i class="ri-archive-drawer-line"></i></a>
+                <a href="#" class="nav-link" data-bs-toggle="tooltip" title="Report Spam" data-bs-placement="left"><i class="ri-spam-2-line"></i></a>
+                <a href="#" class="nav-link" data-bs-toggle="tooltip" title="Labels" data-bs-placement="left"><i class="ri-price-tag-line"></i></a>
+                <a href="#" class="nav-link" data-bs-toggle="tooltip" title="Delete" data-bs-placement="left"><i class="ri-delete-bin-5-line"></i></a>
+                <a href="#" class="nav-link" data-bs-toggle="tooltip" title="More" data-bs-placement="left"><i class="ri-more-2-fill"></i></a>
+            </nav>
+            <h4>Reactivate and Reconnect</h4>
+        </div><!-- mailcontent-subject -->
+        <div class="mailcontent-group d-none">
+            <div class="mailcontent-item">
+                <div class="mailcontent-header">
+                    <div class="mail-avatar"><img src="~/Mail/smartmail/assets/img/img1.jpg" alt=""></div>
+                    <div class="mailcontent-sender">
+                        <h6>Mary Johnson <span>&lt;maryjohnson@domain.com&gt;</span></h6>
+                        <p>to: Themepixels</p>
+                    </div><!-- mail-sender -->
+                    <div class="mailcontent-time">12:23 PM<span> (2 hours ago)</span></div>
+                    <nav class="nav">
+                        <a href="#" class="nav-link" data-bs-toggle="tooltip" title="Not Starred"><i class="ri-star-line"></i></a>
+                        <a href="#" class="nav-link" data-bs-toggle="tooltip" title="Reply"><i class="ri-reply-line"></i></a>
+                        <a href="#" class="nav-link" data-bs-toggle="tooltip" title="More"><i class="ri-more-2-fill"></i></a>
+                    </nav>
+                </div><!-- mailcontent-header -->
+                <div class="mailcontent-body d-none">
+                    <p>Hello, Themepixels Team!</p>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                    <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
+                    <p>Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                    <p>Best Regards,<br>Mary Johnson<br>Software Engineer - Themepixels, Inc.</p>
+
+                </div><!-- mailcontent-body -->
+            </div><!-- mailcontent-item -->
+            <div class="mailcontent-item">
+                <div class="mailcontent-header">
+                    <div class="mail-avatar"><span class="bg-primary">m</span></div>
+                    <div class="mailcontent-sender">
+                        <h6>Themepixels <span>&lt;me@themepixels.me&gt;</span></h6>
+                        <p>to: Mary Johnson</p>
+                    </div><!-- mail-sender -->
+                    <div class="mailcontent-time">11:15 AM<span> (3 hours ago)</span></div>
+                    <nav class="nav">
+                        <a href="#" class="nav-link" data-bs-toggle="tooltip" title="Not Starred"><i class="ri-star-line"></i></a>
+                        <a href="#" class="nav-link" data-bs-toggle="tooltip" title="Reply"><i class="ri-reply-line"></i></a>
+                        <a href="#" class="nav-link" data-bs-toggle="tooltip" title="More"><i class="ri-more-2-fill"></i></a>
+                    </nav>
+                </div><!-- mailcontent-header -->
+                <div class="mailcontent-body">
+                    <p>Hi, Mary Johnson,</p>
+                    <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
+
+                    <div class="card card-mail mb-3">
+                        <div class="card-body">
+                            <h6 class="card-title">Reactivate &amp; Reconnect</h6>
+                            <ul>
+                                <li>Exce sint occaecat cupid non proident, sunt in culpa qui.</li>
+                                <li>Tempo ribus autem quibus dam et aut officiis debitis aut rerum.</li>
+                                <li>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</li>
+                            </ul>
+                        </div><!-- card-body -->
+                    </div><!-- card -->
+
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+
+                    <p>Best Regards,<br>Themepixels, Inc.</p>
+
+                    <hr>
+
+                    <label class="mailcontent-label">2 Attachments</label>
+
+                    <div class="attachment-group">
+                        <div class="attachment-item">
+                            <div class="attachment-icon text-primary"><i class="ri-file-zip-line"></i></div>
+                            <div class="attachment-body">
+                                <h6><a href="#">MarketingAssets.zip</a></h6>
+                                <span>812 KB</span>
+                            </div>
+                        </div><!-- attachment-item -->
+                        <div class="attachment-item">
+                            <div class="attachment-icon text-success"><i class="ri-file-excel-line"></i></div>
+                            <div class="attachment-body">
+                                <h6><a href="#">MarketingReports.xls</a></h6>
+                                <span>365 KB</span>
+                            </div>
+                        </div><!-- attachment-item -->
+                    </div><!-- attachment-group -->
+                </div><!-- mailcontent-body -->
+            </div><!-- mailcontent-item -->
+        </div><!-- mailcontent-group -->
+        <div class="mailcontent-footer d-none">
+            <a href="#" class="btn btn-secondary btn-icontext"><i class="ri-reply-line me-1"></i> Reply</a>
+            <a href="" class="btn btn-secondary btn-icontext"><i class="ri-share-forward-line me-1"></i> Forward</a>
+        </div><!-- mailcontent-footer -->
+        <div class="mailcontent-placeholder">
+            <i class="ri-mail-send-line"></i>
+            <h5>No email has been selected</h5>
+        </div><!-- mailcontent-placeholder -->
+    </div><!-- mailcontent -->
+
+    <a href="" class="menu-compose"><i class="ri-pencil-line"></i></a>
+
+    <div class="compose d-none">
+        <div class="compose-content">
+            <div class="compose-header">
+                <h6 class="compose-title">New Message</h6>
+                <nav class="nav">
+                    <a href="#" class="nav-link nav-link-minimize"><i class="ri-subtract-line"></i></a>
+                    <a href="#" class="nav-link nav-link-fullscreen">
+                        <i class="ri-fullscreen-line"></i>
+                        <i class="ri-fullscreen-exit-line"></i>
+                    </a>
+                    <a href="#" class="nav-link nav-link-close"><i class="ri-close-line"></i></a>
+                </nav>
+            </div><!-- compose-header -->
+            <div class="compose-body">
+                <div class="form-group"><input type="text" class="form-control" placeholder="Enter receipient's email address"></div>
+                <div class="form-group"><input type="text" class="form-control" placeholder="Enter subject"></div>
+                <div class="form-group"><textarea class="form-control" rows="10"></textarea></div>
+            </div><!-- compose-body -->
+            <nav class="nav nav-toolbar">
+                <a href="" class="nav-link"><i class="ri-arrow-go-back-line"></i></a>
+                <a href="" class="nav-link"><i class="ri-arrow-go-forward-line"></i></a>
+                <span class="nav-separator"></span>
+                <a href="" class="nav-link"><i class="ri-text"></i></a>
+                <a href="" class="nav-link"><i class="ri-bold"></i></a>
+                <a href="" class="nav-link"><i class="ri-italic"></i></a>
+                <a href="" class="nav-link"><i class="ri-underline"></i></a>
+                <a href="" class="nav-link"><i class="ri-align-left"></i></a>
+                <a href="" class="nav-link"><i class="ri-list-check"></i></a>
+                <span class="nav-separator"></span>
+                <a href="" class="nav-link"><i class="ri-attachment-2"></i></a>
+                <a href="" class="nav-link"><i class="ri-link"></i></a>
+                <a href="" class="nav-link"><i class="ri-image-add-line"></i></a>
+                <a href="" class="nav-link"><i class="ri-emotion-line"></i></a>
+                <a href="" class="nav-link"><i class="ri-more-2-fill"></i></a>
+            </nav><!-- nav-toolbar -->
+            <div class="compose-footer">
+                <button type="submit" class="btn btn-primary btn-icontext"><i class="ri-send-plane-fill me-2"></i> Send</button>
+                <button class="btn btn-white btn-icon"><i class="ri-delete-bin-line"></i></button>
+            </div><!-- compose-footer -->
+        </div><!-- compose-content -->
+    </div><!-- compose -->
+
+    <div class="backdrop"></div>
+    <script src="~/Mail/smartmail/lib/jquery/jquery.min.js"></script>
+    <script src="~/Mail/smartmail/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Mail/smartmail/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+    <script src="~/Mail/smartmail/assets/js/script.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+@await Component.InvokeAsync("_HeadComponentPartial")
+<body>
+    <div class="wrapper">
+        @await Component.InvokeAsync("_NavbarComponentPartial")
+        <div class="content-wrapper">
+            <section class="content-header">
+                <div class="container-fluid">
+                </div>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    @await Component.InvokeAsync("_SidebarComponentPartial")
+
+                    @RenderBody()
+
+                </div>
+
+            </section>
+
+        </div>
+        @await Component.InvokeAsync("_FooterComponentPartial")
+    </div>
+    <!-- ./wrapper -->
+    @await Component.InvokeAsync("_ScriptComponentPartial")
+</body>
+</html>
+
+

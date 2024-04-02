@@ -1,0 +1,57 @@
+﻿@model EntityLayer.Concrete.UsersMessage
+
+@{
+    ViewData["Title"] = "Inbox";
+    Layout = "~/Views/Shared/_MessageLayout.cshtml";
+}
+
+<div class="col-md-9">
+    <div class="card card-primary card-outline">
+        <!-- /.card-header -->
+        <div class="card-body p-0">
+            
+            <div class="mailbox-read-info">
+                <h3>@Model.Subject</h3>
+                <h6><br />
+                    Gönderen: @Model.SenderMail
+                    <span class="mailbox-read-time float-right">@Model.Date.ToShortDateString()</span>
+                </h6>
+            </div>
+            <!-- /.mailbox-read-info -->
+            <div class="mailbox-controls with-border text-center">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Reply">
+                        <i class="fas fa-reply"></i>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Forward">
+                        <i class="fas fa-share"></i>
+                    </button>
+                </div>
+                <!-- /.btn-group -->
+                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
+                    <i class="fas fa-print"></i>
+                </button>
+            </div>
+            <!-- /.mailbox-controls -->
+            <div class="mailbox-read-message">
+                <br />
+                <p>@Model.Content</p>
+            </div>
+         
+        </div>
+    
+        <div class="card-footer">
+            <div class="float-right">
+                <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Cevapla</button>
+                <button type="button" class="btn btn-default"><i class="fas fa-share"></i> İlet</button>
+            </div>
+            <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i><a href="/Message/TrashMessages/@Model.UserMessageID"> Sil</a></button>
+            <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Yazdır</button>
+        </div>
+        <!-- /.card-footer -->
+    </div>
+    <!-- /.card -->
+</div>
