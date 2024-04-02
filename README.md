@@ -1,4 +1,4 @@
-# Identity İle Kullancı Mesajlaşma Uygulaması
+# Identity İle Kullanıcı Mesajlaşma Uygulaması
 Bu projede kullanıcılar sisteme kayıt oldukları Email adresleriyle giriş yaptıktan sonra gelen ve giden mesajları görme,yeni mesaj gönderme,mesajı taslak olarak kaydetme,profil bilgilerini düzenleme
 ve şifre değiştirme gibi işlemlere erişim sağlayabilirler.
 
